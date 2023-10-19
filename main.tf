@@ -67,7 +67,6 @@ resource "aws_backup_plan" "default" {
       schedule                 = lookup(rule.value, "schedule", null)
       start_window             = lookup(rule.value, "start_window", null)
       completion_window        = lookup(rule.value, "completion_window", null)
-      recovery_point_tags      = module.this.tags
       enable_continuous_backup = lookup(rule.value, "enable_continuous_backup", null)
 
       dynamic "lifecycle" {
